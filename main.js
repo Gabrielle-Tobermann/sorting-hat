@@ -13,7 +13,7 @@ const printToDom = (divId, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
-
+// Function creates and prints student cards to DOM
 const createStudentCards = (arr) => {
   let domString = '';
   for (let item of arr) {
@@ -29,6 +29,44 @@ const createStudentCards = (arr) => {
   }
   printToDom('#students', domString);
 }
+
+// Function to grab info from the form 
+const getFormInfo = (e) => {
+  e.preventDefault();
+  const houses = ['Slytherin', 'Griffindor', 'Hufflepuff', 'Ravenclaw'];
+  const randomHouse = houses[Math.floor(Math.random()*houses.length)];
+
+
+  const name = document.querySelector('#studentName').value;
+  const house = randomHouse;
+
+  const newStudent = {
+    name,
+    house,
+  };
+
+  students.push(newStudent);
+  createStudentCards(students);
+
+  document.querySelector('form').reset();
+}
+
+document.querySelector('form').addEventListener('submit', getFormInfo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const init = () => {
   createStudentCards(students);
