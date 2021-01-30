@@ -34,12 +34,16 @@ const createStudentCards = (arr) => {
 const getFormInfo = (e) => {
   e.preventDefault();
   const houses = ['Slytherin', 'Griffindor', 'Hufflepuff', 'Ravenclaw'];
+  const randomHouse = houses[Math.floor(Math.random()*houses.length)];
+
 
   const name = document.querySelector('#studentName').value;
+  const house = randomHouse;
 
   const newStudent = {
     name,
-  }
+    house,
+  };
 
   students.push(newStudent);
   createStudentCards(students);
