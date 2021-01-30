@@ -9,7 +9,7 @@
   <title>Sorting Hat</title>
 </head>
 <body>
-
+<!-- This is the sorting hat greeting -->
   <div class="jumbotron">
     <h1 class="display-4">I am the Hogwarts Sorting Hat.</h1>
     <p class="lead">There's nothing hidden in your head the Sorting Hat can't see, so try me on and I will tell you where you ought to be.</p>
@@ -19,6 +19,18 @@
     </p>
   </div>
 
+  <!-- Form to submit -->
+  <form>
+    <div class="form-group">
+      <label for="studentName">Student name:</label>
+      <input type="text" class="form-control" id="studentName" aria-describedby="name" placeholder="Enter your name">
+    </div>
+    <button type="submit" class="btn btn-primary">Sort</button>
+  </form>
+
+
+
+<!-- Id for student cards -->
   <div id='students' class='d-flex flex-wrap justify-content-around'></div>
 
 
