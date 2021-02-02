@@ -81,21 +81,3 @@ const init = () => {
 }
 
 init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-const init = () => {
-  createStudentCards(students);
-}
-
-init();
