@@ -67,17 +67,19 @@ const getFormInfo = (e) => {
   document.querySelector("form").reset();
 };
 
-// const expelStudent = () => {
-//   const targetId = e.targt.id;
-//   if (e.target.id === "expelButton") {
-//     students.splice(targetId, 1);
-//   }
-//   createStudentCards(students);
-// };
+const expelStudent = (e) => {
+  const targetId = e.target.id;
+  const targetType = e.target.type;
+  if (targetType === "button") {
+    students.splice(targetId, 1);
+  }
+  createStudentCards(students);
+ 
+};
 
 const buttonEvents = () => {
   document.querySelector("#start-sorting").addEventListener("click", createForm);
-  document.querySelector("expelButton").addEventListener("click", expelStudent);
+  document.querySelector("#students").addEventListener("click", expelStudent);
 };
 
 const init = () => {
