@@ -2,8 +2,8 @@ console.log("CONNECTED");
 
 const students = [
   {
-    name: "Gabby",
-    house: "Slytherin",
+    name: 'Gabby',
+    house: 'Slytherin',
   },
 ];
 
@@ -31,6 +31,7 @@ const createStudentCards = (arr) => {
 
 //Function adds form to the DOM when button is clicked
 const createForm = () => {
+
   let formString = `<form>
     <div class="form-group">
       <label for="studentName">Student name:</label>
@@ -43,6 +44,7 @@ const createForm = () => {
   </form>`;
 
   printToDom("#createForm", formString);
+  document.querySelector("form").addEventListener("submit", getFormInfo);
 };
 
 //Function to grab info from the form
@@ -65,17 +67,16 @@ const getFormInfo = (e) => {
   document.querySelector("form").reset();
 };
 
-const expelStudent = () => {
-  const targetId = e.targt.id;
-  if (e.target.id === "expelButton") {
-    students.splice(targetId, 1);
-  }
-  createStudentCards(students);
-};
+// const expelStudent = () => {
+//   const targetId = e.targt.id;
+//   if (e.target.id === "expelButton") {
+//     students.splice(targetId, 1);
+//   }
+//   createStudentCards(students);
+// };
 
 const buttonEvents = () => {
   document.querySelector("#start-sorting").addEventListener("click", createForm);
-  document.querySelector("form").addEventListener("submit", getFormInfo);
   document.querySelector("expelButton").addEventListener("click", expelStudent);
 };
 
