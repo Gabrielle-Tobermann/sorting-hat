@@ -30,6 +30,21 @@ const createStudentCards = (arr) => {
   printToDom('#students', domString);
 }
 
+const createForm = () => {
+  let formString = `<form>
+    <div class="form-group">
+      <label for="studentName">Student name:</label>
+      <input type="text" class="form-control" id="studentName" aria-describedby="name" placeholder="Enter your name" required>
+    </div>
+    <div class="invalid-feedback">
+      You must enter your name. 
+    </div>
+    <button type="submit" class="btn btn-primary">Sort</button>
+  </form>`
+
+  printToDom('#createForm', formString);
+};
+
 // Function to grab info from the form 
 const getFormInfo = (e) => {
   e.preventDefault();
@@ -51,10 +66,21 @@ const getFormInfo = (e) => {
   document.querySelector('form').reset();
 }
 
-document.querySelector('form').addEventListener('submit', getFormInfo);
+
+
+const buttonEvents = () => {
+  document.querySelector('#start-sorting').addEventListener('click', createForm);
+  document.querySelector('form').addEventListener('submit', getFormInfo);
+}
 
 
 
+const init = () => {
+  buttonEvents();
+  createStudentCards(students);
+}
+
+init();
 
 
 
