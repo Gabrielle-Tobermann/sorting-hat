@@ -1,11 +1,8 @@
 console.log("CONNECTED");
 
-const students = [
-  {
-    name: 'Gabby',
-    house: 'Slytherin',
-  },
-];
+const students = [];
+
+const expStudents = [];
 
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
@@ -21,6 +18,7 @@ const createStudentCards = (arr) => {
     <div class="card-body">
       <h5 class="card-title">${item.name}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${item.house}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">${item.id}</h6>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <button type="button" class="btn btn-primary" id="expelButton">Expel</button>
     </div>
@@ -56,9 +54,16 @@ const getFormInfo = (e) => {
   const name = document.querySelector("#studentName").value;
   const house = randomHouse;
 
+  //This creates an array for the student Ids + sorts them from lowest to highest
+  const studentIds = students.map(student => student.id).sort((a, b) => a - b);
+
+  //This creates an id that is the last item of array + 1, but if array is empty, the id will be 1. 
+  const id = studentIds.length ? studentIds[(studentIds.length - 1)] + 1 : 1;
+
   const newStudent = {
     name,
     house,
+    id,       
   };
 
   students.push(newStudent);
@@ -67,15 +72,38 @@ const getFormInfo = (e) => {
   document.querySelector("form").reset();
 };
 
+
+expStudentCards = (arr) => {   
+  let domString = '';
+
+  for (let item of arr) {
+    let i = arr.indexOf(item);
+    domString += `<div class="card" style="width: 18rem;" id=${i}>
+    <div class="card-body">
+      <h5 class="card-title">${item.name}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${item.house}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">${item.id}</h6>
+      <p>Expelled</p>
+    </div>
+  </div>`;
+  }
+  printToDom('#exp-students', domString);
+  console.log(expStudents);
+}
+
 const expelStudent = (e) => {
   const targetId = e.target.id;
   const targetType = e.target.type;
   if (targetType === "button") {
-    students.splice(targetId, 1);
+    let exp = students.splice(targetId, 1);
+    expStudents.push(...exp);
   }
-  createStudentCards(students);
+  createStudentCards(students); //Rebuilding student cards w/o expelled students
+  expStudentCards(expStudents);   //Building expelled student cards
  
 };
+
+
 
 const buttonEvents = () => {
   document.querySelector("#start-sorting").addEventListener("click", createForm);
@@ -85,6 +113,7 @@ const buttonEvents = () => {
 const init = () => {
   buttonEvents();
   createStudentCards(students);
+  
 };
 
 init();
