@@ -52,22 +52,22 @@ const getFormInfo = (e) => {
   const houses = [
     {
       houseName: 'Gryffindor',
-      color: 'red',
+      color: '#9E0501',
       values: 'Bravery, daring, nerve, chivalry',
     },
     {
       houseName: 'Hufflepuff',
-      color: 'Yellow',
+      color: '#FFF229',
       values: 'Hard work, dedication, patience, loyalty and fair play'
     }, 
     {
       houseName: 'Ravenclaw',
-      color: 'blue',
+      color: '#0000B2',
       values: 'Intelligence, knowledge, curiosity, creativity and wit'
     }, 
     {
       houseName: 'Slytherin',
-      color: 'green',
+      color: '#004221',
       values: 'Ambition, leadership, self-preservation, cunning and resourcefulness'
     },
   ]
