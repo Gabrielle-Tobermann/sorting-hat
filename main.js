@@ -17,9 +17,8 @@ const createStudentCards = (arr) => {
     domString += `<div class="card" style="width: 18rem;" id=${i}>
     <div class="card-body">
       <h5 class="card-title">${item.name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${item.house}</h6>
-      <h6 class="card-subtitle mb-2 text-muted">${item.id}</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h6 class="card-subtitle mb-2 text-muted">${item.house.houseName}</h6>
+      <p class="card-text">${item.house.values}</p>
       <button type="button" class="btn btn-primary" id="expelButton">Expel</button>
     </div>
   </div>`;
@@ -48,7 +47,30 @@ const createForm = () => {
 //Function to grab info from the form
 const getFormInfo = (e) => {
   e.preventDefault();
-  const houses = ["Slytherin", "Griffindor", "Hufflepuff", "Ravenclaw"];
+  //const houses = ["Slytherin", "Griffindor", "Hufflepuff", "Ravenclaw"];
+  
+  const houses = [
+    {
+      houseName: 'Gryffindor',
+      color: 'red',
+      values: 'Bravery, daring, nerve, chivalry',
+    },
+    {
+      houseName: 'Hufflepuff',
+      color: 'Yellow',
+      values: 'Hard work, dedication, patience, loyalty and fair play'
+    }, 
+    {
+      houseName: 'Ravenclaw',
+      color: 'blue',
+      values: 'Intelligence, knowledge, curiosity, creativity and wit'
+    }, 
+    {
+      houseName: 'Slytherin',
+      color: 'green',
+      values: 'Ambition, leadership, self-preservation, cunning and resourcefulness'
+    },
+  ]
   const randomHouse = houses[Math.floor(Math.random() * houses.length)];
 
   const name = document.querySelector("#studentName").value;
