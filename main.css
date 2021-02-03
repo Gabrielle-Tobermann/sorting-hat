@@ -1,3 +1,16 @@
 body {
   background-color:bisque;
 }
+
+#exp-card {
+  background-color: black;
+}
+
+#exp-card img {
+  width: 100%;
+}
+#exp-card h5 {
+  text-align: center; 
+  color: #B8CDBB;
+  font-family:'Amatic SC', cursive;
+} 

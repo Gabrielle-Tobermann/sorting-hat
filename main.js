@@ -15,11 +15,10 @@ const createStudentCards = (arr) => {
   for (let item of arr) {
     const i = arr.indexOf(item);
     domString += `<div class="card" style="width: 18rem;" id=${i}>
-    <div class="card-body">
+    <div class="card-body" style="background-color:${item.house.color};">
       <h5 class="card-title">${item.name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${item.house}</h6>
-      <h6 class="card-subtitle mb-2 text-muted">${item.id}</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h6 class="card-subtitle mb-2 text-muted">${item.house.houseName}</h6>
+      <p class="card-text">${item.house.values}</p>
       <button type="button" class="btn btn-primary" id="expelButton">Expel</button>
     </div>
   </div>`;
@@ -48,7 +47,30 @@ const createForm = () => {
 //Function to grab info from the form
 const getFormInfo = (e) => {
   e.preventDefault();
-  const houses = ["Slytherin", "Griffindor", "Hufflepuff", "Ravenclaw"];
+  //const houses = ["Slytherin", "Griffindor", "Hufflepuff", "Ravenclaw"];
+  
+  const houses = [
+    {
+      houseName: 'Gryffindor',
+      color: '#9E0501',
+      values: 'Bravery, daring, nerve, chivalry',
+    },
+    {
+      houseName: 'Hufflepuff',
+      color: '#F3CF00',
+      values: 'Hard work, dedication, patience, loyalty and fair play'
+    }, 
+    {
+      houseName: 'Ravenclaw',
+      color: '#4480FF',
+      values: 'Intelligence, knowledge, curiosity, creativity and wit'
+    }, 
+    {
+      houseName: 'Slytherin',
+      color: '#4A9D54',
+      values: 'Ambition, leadership, self-preservation, cunning and resourcefulness'
+    },
+  ]
   const randomHouse = houses[Math.floor(Math.random() * houses.length)];
 
   const name = document.querySelector("#studentName").value;
@@ -79,11 +101,9 @@ expStudentCards = (arr) => {
   for (let item of arr) {
     let i = arr.indexOf(item);
     domString += `<div class="card" style="width: 18rem;" id=${i}>
-    <div class="card-body">
-      <h5 class="card-title">${item.name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${item.house}</h6>
-      <h6 class="card-subtitle mb-2 text-muted">${item.id}</h6>
-      <p>Expelled</p>
+    <div class="card-body" id="exp-card">
+      <h5 class="card-title">${item.name} joined Voldemort</h5>
+      <img src="https://static3.srcdn.com/wordpress/wp-content/uploads/2019/09/voldemort-3.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5">
     </div>
   </div>`;
   }
