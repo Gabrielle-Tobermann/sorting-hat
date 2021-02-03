@@ -101,11 +101,9 @@ expStudentCards = (arr) => {
   for (let item of arr) {
     let i = arr.indexOf(item);
     domString += `<div class="card" style="width: 18rem;" id=${i}>
-    <div class="card-body">
-      <h5 class="card-title">${item.name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${item.house}</h6>
-      <h6 class="card-subtitle mb-2 text-muted">${item.id}</h6>
-      <p>Expelled</p>
+    <div class="card-body" id="exp-card">
+      <h5 class="card-title">${item.name} joined Voldemort</h5>
+      <img src="https://static3.srcdn.com/wordpress/wp-content/uploads/2019/09/voldemort-3.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5">
     </div>
   </div>`;
   }
