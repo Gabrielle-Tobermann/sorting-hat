@@ -15,7 +15,7 @@ const createStudentCards = (arr) => {
   for (let item of arr) {
     const i = arr.indexOf(item);
     domString += `<div class="card" style="width: 18rem;" id=${i}>
-    <div class="card-body">
+    <div class="card-body" style="background-color:${item.house.color};">
       <h5 class="card-title">${item.name}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${item.house.houseName}</h6>
       <p class="card-text">${item.house.values}</p>
@@ -57,17 +57,17 @@ const getFormInfo = (e) => {
     },
     {
       houseName: 'Hufflepuff',
-      color: '#FFF229',
+      color: '#F3CF00',
       values: 'Hard work, dedication, patience, loyalty and fair play'
     }, 
     {
       houseName: 'Ravenclaw',
-      color: '#0000B2',
+      color: '#4480FF',
       values: 'Intelligence, knowledge, curiosity, creativity and wit'
     }, 
     {
       houseName: 'Slytherin',
-      color: '#004221',
+      color: '#4A9D54',
       values: 'Ambition, leadership, self-preservation, cunning and resourcefulness'
     },
   ]
