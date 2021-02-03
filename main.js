@@ -1,11 +1,8 @@
 console.log("CONNECTED");
 
-const students = [
-  {
-    name: 'Gabby',
-    house: 'Slytherin',
-  },
-];
+const students = [];
+
+const expStudents = [];
 
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
@@ -71,11 +68,31 @@ const expelStudent = (e) => {
   const targetId = e.target.id;
   const targetType = e.target.type;
   if (targetType === "button") {
-    students.splice(targetId, 1);
+    let exp = students.splice(targetId, 1);
+    expStudents.push(...exp);
   }
-  createStudentCards(students);
+  createStudentCards(students); //Rebuilding student cards w/o expelled students
+  expStudentCards(expStudents);   //Building expelled student cards
  
 };
+//Building cards for expelled students
+expStudentCards = (arr) => {   
+  let domString = '';
+
+  for (let item of arr) {
+    let i = arr.indexOf(item);
+    domString += `<div class="card" style="width: 18rem;" id=${i}>
+    <div class="card-body">
+      <h5 class="card-title">${item.name}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${item.house}</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <button type="button" class="btn btn-primary" id="expelButton">Expel</button>
+    </div>
+  </div>`;
+  }
+  printToDom('#exp-Students', domString);
+}
+
 
 const buttonEvents = () => {
   document.querySelector("#start-sorting").addEventListener("click", createForm);
