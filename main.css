@@ -66,6 +66,8 @@ form {
 
 #exp-card {
   background-color: black;
+  padding: 0;
+  border: solid black 1px;
 }
 
 #exp-card img {
@@ -74,5 +76,14 @@ form {
 #exp-card h5 {
   text-align: center; 
   color: #B8CDBB;
-  font-family:'Amatic SC', cursive;
+  font-family: 'Cinzel', serif;
+  padding: 8px;
+  font-size: 22px;
 } 
+
+#v-msg {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+  padding-bottom: 30px;
+}

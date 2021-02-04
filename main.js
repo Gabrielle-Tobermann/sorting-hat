@@ -94,7 +94,7 @@ expStudentCards = (arr) => {
     let i = arr.indexOf(item);
     domString += `<div class="card" style="width: 18rem;" id=${i}>
     <div class="card-body" id="exp-card">
-      <h5 class="card-title">${item.name} joined Voldemort</h5>
+      <h5 class="card-title">${item.name} has joined Voldemort</h5>
       <img src="https://static3.srcdn.com/wordpress/wp-content/uploads/2019/09/voldemort-3.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5">
     </div>
   </div>`;
@@ -119,7 +119,7 @@ const expelStudent = (e) => {
   }
 
   if (students.length === 0) {
-    let stringToPrint = "Voldemort's Army has taken over Hogwarts";
+    let stringToPrint = `<div id="v-msg">Voldemort's Army has taken over Hogwarts</div>`;
     printToDom('#Voldemort-army', stringToPrint);
     VoldemortWon();
     }
