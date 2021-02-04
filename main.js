@@ -15,11 +15,11 @@ const createStudentCards = (arr) => {
   for (let item of arr) {
     const i = arr.indexOf(item);
     domString += `<div class="card" style="width: 18rem;" id=${i}>
-    <div class="card-body" style="background-color:${item.house.color};">
+    <div class="card-body" id="student-card" style="background-color:${item.house.color};>
       <h5 class="card-title">${item.name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${item.house.houseName}</h6>
+      <h6 class="card-subtitle mb-2 text-white">${item.house.houseName}</h6>
       <p class="card-text">${item.house.values}</p>
-      <button type="button" class="btn btn-primary" id="expelButton">Expel</button>
+      <button type="button" class="btn btn-dark" id="expelButton">Expel</button>
     </div>
   </div>`;
   }
@@ -37,7 +37,7 @@ const createForm = () => {
     <div class="invalid-feedback">
       You must enter your name. 
     </div>
-    <button type="submit" class="btn btn-primary">Sort</button>
+    <button type="submit" class="btn btn-outline-dark">Sort</button>
   </form>`;
 
   printToDom("#createForm", formString);
@@ -94,7 +94,7 @@ expStudentCards = (arr) => {
     let i = arr.indexOf(item);
     domString += `<div class="card" style="width: 18rem;" id=${i}>
     <div class="card-body" id="exp-card">
-      <h5 class="card-title">${item.name} joined Voldemort</h5>
+      <h5 class="card-title">${item.name} has joined Voldemort</h5>
       <img src="https://static3.srcdn.com/wordpress/wp-content/uploads/2019/09/voldemort-3.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5">
     </div>
   </div>`;
@@ -119,7 +119,7 @@ const expelStudent = (e) => {
   }
 
   if (students.length === 0) {
-    let stringToPrint = "Voldemort's Army has taken over Hogwarts";
+    let stringToPrint = `<div id="v-msg">Voldemort's Army has taken over Hogwarts</div>`;
     printToDom('#Voldemort-army', stringToPrint);
     VoldemortWon();
     }

@@ -1,9 +1,73 @@
 body {
-  background-color:bisque;
+  background-color: #F2F4F4;
+  margin: 20px;
 }
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jumbotron h1{
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+.lead {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+#start-sorting {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  width: fit-content;
+}
+
+form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#createForm input {
+  width: fit-content;
+}
+
+#createForm button {
+  height: fit-content;
+  align-self:flex-end;
+  margin-left: 5px;
+}
+
+
+#student-card {
+  border: solid black 3px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: black;
+  font-size: 28px;
+  margin-bottom: auto;
+}
+
+#student-card h6 {
+  font-size: 22px;
+  color: white;
+  padding-top: 2px;
+}
+
+#student-card p {
+  font-style: oblique;
+  font-size: 15px;
+}
+
 
 #exp-card {
   background-color: black;
+  padding: 0;
+  border: solid black 1px;
 }
 
 #exp-card img {
@@ -12,5 +76,14 @@ body {
 #exp-card h5 {
   text-align: center; 
   color: #B8CDBB;
-  font-family:'Amatic SC', cursive;
+  font-family: 'Cinzel', serif;
+  padding: 8px;
+  font-size: 22px;
 } 
+
+#v-msg {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+  padding-bottom: 30px;
+}
