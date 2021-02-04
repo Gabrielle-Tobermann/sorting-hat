@@ -1,5 +1,5 @@
 body {
-  background-color:bisque;
+  background-color: #F2F4F4;
   margin: 20px;
 }
 
@@ -22,6 +22,24 @@ body {
 #start-sorting {
   font-family:Georgia, 'Times New Roman', Times, serif;
   width: fit-content;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#createForm input {
+  width: fit-content;
+  
+}
+
+#createForm button {
+  height: fit-content;
+  align-self:flex-end;
+  margin-left: 5px;
 }
 
 

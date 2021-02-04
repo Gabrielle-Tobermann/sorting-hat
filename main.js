@@ -37,7 +37,7 @@ const createForm = () => {
     <div class="invalid-feedback">
       You must enter your name. 
     </div>
-    <button type="submit" class="btn btn-primary">Sort</button>
+    <button type="submit" class="btn btn-outline-dark">Sort</button>
   </form>`;
 
   printToDom("#createForm", formString);
