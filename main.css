@@ -26,6 +26,7 @@ body {
 
 form {
   margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -33,13 +34,33 @@ form {
 
 #createForm input {
   width: fit-content;
-  
 }
 
 #createForm button {
   height: fit-content;
   align-self:flex-end;
   margin-left: 5px;
+}
+
+
+#student-card {
+  border: solid black 3px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: black;
+  font-size: 28px;
+  margin-bottom: auto;
+}
+
+#student-card h6 {
+  font-size: 22px;
+  color: white;
+  padding-top: 2px;
+}
+
+#student-card p {
+  font-style: oblique;
+  font-size: 15px;
 }
 
 

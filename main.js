@@ -15,11 +15,11 @@ const createStudentCards = (arr) => {
   for (let item of arr) {
     const i = arr.indexOf(item);
     domString += `<div class="card" style="width: 18rem;" id=${i}>
-    <div class="card-body" style="background-color:${item.house.color};">
+    <div class="card-body" id="student-card" style="background-color:${item.house.color};>
       <h5 class="card-title">${item.name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${item.house.houseName}</h6>
+      <h6 class="card-subtitle mb-2 text-white">${item.house.houseName}</h6>
       <p class="card-text">${item.house.values}</p>
-      <button type="button" class="btn btn-primary" id="expelButton">Expel</button>
+      <button type="button" class="btn btn-dark" id="expelButton">Expel</button>
     </div>
   </div>`;
   }
