@@ -47,7 +47,6 @@ const createForm = () => {
 //Function to grab info from the form
 const getFormInfo = (e) => {
   e.preventDefault();
-  //const houses = ["Slytherin", "Griffindor", "Hufflepuff", "Ravenclaw"];
   
   const houses = [
     {
@@ -76,16 +75,9 @@ const getFormInfo = (e) => {
   const name = document.querySelector("#studentName").value;
   const house = randomHouse;
 
-  //This creates an array for the student Ids + sorts them from lowest to highest
-  const studentIds = students.map(student => student.id).sort((a, b) => a - b);
-
-  //This creates an id that is the last item of array + 1, but if array is empty, the id will be 1. 
-  const id = studentIds.length ? studentIds[(studentIds.length - 1)] + 1 : 1;
-
   const newStudent = {
     name,
-    house,
-    id,       
+    house,     
   };
 
   students.push(newStudent);
@@ -108,8 +100,15 @@ expStudentCards = (arr) => {
   </div>`;
   }
   printToDom('#exp-students', domString);
-  console.log(expStudents);
+  //console.log(expStudents);
 }
+
+VoldemortWon = () => {
+  document.querySelector('.jumbotron').style.display = "none";
+  document.querySelector('#createForm').style.display = "none";
+};
+
+
 
 const expelStudent = (e) => {
   const targetId = e.target.id;
@@ -118,8 +117,18 @@ const expelStudent = (e) => {
     let exp = students.splice(targetId, 1);
     expStudents.push(...exp);
   }
+
+  if (students.length === 0) {
+    let stringToPrint = "Voldemort's Army has taken over Hogwarts";
+    printToDom('#Voldemort-army', stringToPrint);
+    VoldemortWon();
+    }
+
+  
+
   createStudentCards(students); //Rebuilding student cards w/o expelled students
   expStudentCards(expStudents);   //Building expelled student cards
+  console.log(students);
  
 };
 
