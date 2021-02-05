@@ -1,3 +1,4 @@
+import VoldemortWon from './Modules/VoldermortWon.js';
 console.log("CONNECTED");
 
 const students = [];
@@ -87,7 +88,7 @@ const getFormInfo = (e) => {
 };
 
 
-expStudentCards = (arr) => {   
+const expStudentCards = (arr) => {   
   let domString = '';
 
   for (let item of arr) {
@@ -100,14 +101,7 @@ expStudentCards = (arr) => {
   </div>`;
   }
   printToDom('#exp-students', domString);
-  //console.log(expStudents);
-}
-
-VoldemortWon = () => {
-  document.querySelector('.jumbotron').style.display = "none";
-  document.querySelector('#createForm').style.display = "none";
 };
-
 
 
 const expelStudent = (e) => {
@@ -124,15 +118,11 @@ const expelStudent = (e) => {
     VoldemortWon();
     }
 
-  
-
   createStudentCards(students); //Rebuilding student cards w/o expelled students
   expStudentCards(expStudents);   //Building expelled student cards
   console.log(students);
  
 };
-
-
 
 const buttonEvents = () => {
   document.querySelector("#start-sorting").addEventListener("click", createForm);
@@ -142,7 +132,6 @@ const buttonEvents = () => {
 const init = () => {
   buttonEvents();
   createStudentCards(students);
-  
 };
 
 init();
