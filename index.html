@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet" href="main.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-  <title>Sorting Hat</title>
-</head>
-<body>
-<!-- This is the sorting hat greeting -->
-  <div class="jumbotron">
-    <h1 class="display-4">I am the Hogwarts Sorting Hat.</h1>
-    <p class="lead">There's nothing hidden in your head the Sorting Hat can't see, so try me on and I will tell you where you ought to be...</p>
-    <hr class="my-4">
-    <a class="btn btn-outline-dark btn-lg" href="#" role="button" id="start-sorting">Click here to find out!</a>
-  </div>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sorting Hat</title>
+  </head>
+  <body>
+    <!-- This is the sorting hat greeting -->
+    <div class="jumbotron">
+      <h1 class="display-4">I am the Hogwarts Sorting Hat.</h1>
+      <p class="lead">
+        There's nothing hidden in your head the Sorting Hat can't see, so try me
+        on and I will tell you where you ought to be...
+      </p>
+      <hr class="my-4" />
+      <a
+        class="btn btn-outline-dark btn-lg"
+        href="#"
+        role="button"
+        id="start-sorting"
+        >Click here to find out!</a>
+    </div>
 
-  <div id="createForm"></div>
+    <div id="createForm"></div>
 
+    <!-- Id for student cards -->
+    <div id="students" class="d-flex justify-content-center flex-wrap"></div>
 
-<!-- Id for student cards -->
-  <div id='students' class="d-flex justify-content-center flex-wrap"></div>
+    <div id="Voldemort-army"></div>
 
-  <div id='Voldemort-army'></div>
+    <!-- Id for expelled students -->
+    <div
+      id="exp-students"
+      class="d-flex justify-content-center flex-wrap"></div>
 
-<!-- Id for expelled students -->
-  <div id='exp-students' class="d-flex justify-content-center flex-wrap"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
 
-  
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-  <script type="module" src="main.js"></script>
-</body>
+    <script type="module" src="main.js"></script>
+  </body>
 </html>

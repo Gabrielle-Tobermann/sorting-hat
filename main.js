@@ -10,7 +10,7 @@ const printToDom = (divId, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 };
 
-// Function creates and prints student cards to DOM
+
 const createStudentCards = (arr) => {
   let domString = "";
   for (let item of arr) {
@@ -27,7 +27,6 @@ const createStudentCards = (arr) => {
   printToDom("#students", domString);
 };
 
-//Function adds form to the DOM when button is clicked
 const createForm = () => {
 
   let formString = `<form>
@@ -45,7 +44,7 @@ const createForm = () => {
   document.querySelector("form").addEventListener("submit", getFormInfo);
 };
 
-//Function to grab info from the form
+
 const getFormInfo = (e) => {
   e.preventDefault();
   
@@ -118,19 +117,18 @@ const expelStudent = (e) => {
     VoldemortWon();
     }
 
-  createStudentCards(students); //Rebuilding student cards w/o expelled students
-  expStudentCards(expStudents);   //Building expelled student cards
-  console.log(students);
- 
+  createStudentCards(students); 
+  expStudentCards(expStudents); 
+  
 };
 
-const buttonEvents = () => {
+const clickEvents = () => {
   document.querySelector("#start-sorting").addEventListener("click", createForm);
   document.querySelector("#students").addEventListener("click", expelStudent);
 };
 
 const init = () => {
-  buttonEvents();
+  clickEvents();
   createStudentCards(students);
 };
 
