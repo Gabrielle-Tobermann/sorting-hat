@@ -18,3 +18,5 @@ SCREENSHOTS: ![SortingHat-1](https://user-images.githubusercontent.com/76187279/
 ![SortingHat-3](https://user-images.githubusercontent.com/76187279/107101806-58c20900-67cd-11eb-89c9-ffba9574af90.png)
 ![SortingHat-4](https://user-images.githubusercontent.com/76187279/107101815-5cee2680-67cd-11eb-86c7-a95d02359b49.png)
 ![SortingHat-5](https://user-images.githubusercontent.com/76187279/107101822-5fe91700-67cd-11eb-818b-333e54340415.png)
+
+DEPLOYED LINK: https://gt-sorting-hat.netlify.app/
