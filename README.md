@@ -1,8 +1,6 @@
 
 # Sorting Hat [![Netlify Status](https://api.netlify.com/api/v1/badges/7e72a974-0a78-4004-bfdc-e7498de1905a/deploy-status)](https://app.netlify.com/sites/gt-sorting-hat/deploys)
 
-
-
 ## OVERVIEW: 
 The purpose of the application is to assign a person to one of the four Houses in Harry Potter. Once the user's name is submitted, a card appears with the House name, color and values. 
 
