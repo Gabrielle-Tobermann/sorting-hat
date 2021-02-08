@@ -22,8 +22,8 @@ The purpose of the application is to assign a person to one of the four Houses i
 https://www.loom.com/share/6ac390a632b3400a9a05c53e7fdfee2a
 
 ## HELPUL LINKS:
-Project board: https://github.com/Gabrielle-Tobermann/sorting-hat/projects
-Netlify link:  https://gt-sorting-hat.netlify.app/
+- Project board: https://github.com/Gabrielle-Tobermann/sorting-hat/projects
+- Netlify link:  https://gt-sorting-hat.netlify.app/
 
 ## CONTRIBUTORS: 
 Gabby Tobermann https://github.com/Gabrielle-Tobermann
